@@ -1,6 +1,7 @@
 package com.sushant.taskmanger.Service;
 
 import com.sushant.taskmanger.model.SignInResponse;
+import com.sushant.taskmanger.model.Task;
 import com.sushant.taskmanger.model.User;
 
 import retrofit2.Call;
@@ -13,6 +14,9 @@ public interface ApiService {
     Call<User> signUp(@Body User user);
 
     @POST("/auth/sign-in")
-    Call<SignInResponse> signIn(@Body User signInRequest);
+    Call<SignInResponse> signIn(@Body User user);
+    @POST("/task/createTask")
+    Call<Task> createTask(@Body Task task);
+
 }
 
