@@ -13,9 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
+
 import com.sushant.taskmanger.Service.ApiService;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 import com.sushant.taskmanger.Service.RetrofitClientInstance;
 import com.sushant.taskmanger.model.User;

@@ -6,11 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".TaskActivity">
 
-    <TextView
-        android:id="@+id/textView"
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/task_list_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List will update"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="269dp" />
+        android:layout_margin="20dp"
+        android:src="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
