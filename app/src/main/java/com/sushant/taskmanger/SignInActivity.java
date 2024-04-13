@@ -13,12 +13,11 @@ import android.widget.Toast;
 
 import com.sushant.taskmanger.Service.ApiService;
 import com.sushant.taskmanger.Service.RetrofitClientInstance;
-import com.sushant.taskmanger.model.SignInResponse;
+import com.sushant.taskmanger.model.Response;
 import com.sushant.taskmanger.model.User;
 
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -52,12 +51,12 @@ public class SignInActivity extends AppCompatActivity {
                 User signInRequest = new User(email, password);
 
                 // Call the sign-in API
-                retrofitAPI.signIn(signInRequest).enqueue(new Callback<SignInResponse>() {
+                retrofitAPI.signIn(signInRequest).enqueue(new Callback<Response>() {
                     @Override
-                    public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
+                    public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                         if (response.isSuccessful() && response.body() != null) {
                             // Save the token in SharedPreferences
-                            String token = response.body().getToken();
+                            String token = response.body().getData();
                             saveTokenInSharedPreferences(token);
 
                             // Handle successful sign-in
@@ -74,7 +73,7 @@ public class SignInActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<SignInResponse> call, Throwable t) {
+                    public void onFailure(Call<Response> call, Throwable t) {
                         // Handle network error
                         Toast.makeText(SignInActivity.this, "Network error", Toast.LENGTH_SHORT).show();
                     }

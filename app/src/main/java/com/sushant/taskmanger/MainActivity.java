@@ -18,6 +18,7 @@ import com.sushant.taskmanger.Service.ApiService;
 
 
 import com.sushant.taskmanger.Service.RetrofitClientInstance;
+import com.sushant.taskmanger.model.TaskResponse;
 import com.sushant.taskmanger.model.User;
 
 import retrofit2.Call;
@@ -30,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextUsername, editTextEmail, editTextPassword;
     private TextView signIn;
     private Button buttonSignUp;
-    private ApiService authService;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
         // Check if token is available in SharedPreferences
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String token = sharedPreferences.getString("token", null);
-
         // If token is available, automatically navigate to MainActivity
         if (token != null && !token.isEmpty()) {
             startActivity(new Intent(MainActivity.this, TaskActivity.class));

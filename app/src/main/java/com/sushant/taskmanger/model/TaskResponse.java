@@ -1,10 +1,12 @@
 package com.sushant.taskmanger.model;
 
-import com.google.gson.annotations.SerializedName;
 
-public class SignInResponse {
+import com.google.gson.annotations.SerializedName;
+import java.util.List;
+
+public class TaskResponse {
     @SerializedName("data")
-    private String token;
+    private List<Task> data;
 
     @SerializedName("message")
     private String message;
@@ -12,12 +14,12 @@ public class SignInResponse {
     @SerializedName("status")
     private int status;
 
-    public String getToken() {
-        return token;
+    public List<Task> getData() {
+        return data;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public void setData(List<Task> data) {
+        this.data = data;
     }
 
     public String getMessage() {
