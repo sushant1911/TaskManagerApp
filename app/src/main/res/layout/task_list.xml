@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/taskListItem_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Title"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/taskListItem_description"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/taskListItem_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Task Description"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taskListItem_title"
+        app:layout_constraintBottom_toTopOf="@id/taskListItem_deadline"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/taskListItem_deadline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Deadline: 2024-04-08T00:00:00"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taskListItem_description"
+        app:layout_constraintBottom_toTopOf="@id/taskListItem_priority"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/taskListItem_priority"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Priority: LOW"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taskListItem_deadline"
+        app:layout_constraintBottom_toTopOf="@id/taskListItem_status"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/taskListItem_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Status: IN_PROGRESS"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/taskListItem_priority"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C2C2C2"
+        app:layout_constraintTop_toBottomOf="@id/taskListItem_status" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
